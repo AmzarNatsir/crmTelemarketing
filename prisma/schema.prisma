@@ -61,7 +61,7 @@ model Contact {
 
 model SurveyBagianUmum {
   id                          BigInt   @id @default(autoincrement())
-  uuid                        String   @unique
+  uuid                        String   @unique @default(uuid())
   jenisKontak                 String
   namaLengkap                 String
   jabatan                     String
@@ -78,7 +78,7 @@ model SurveyBagianUmum {
   provinsiKode                String
   titikKoordinat              String?
   komoditasUtama              String
-  komoditasUtamaLainnya       String
+  komoditasUtamaLainnya       String?
   luasLahan                   String
   sistemIrigasi               String
   sistemIrigasiLainnya        String?
@@ -108,7 +108,7 @@ model SurveyBagianUmum {
 
 model SurveyProspekPetani {
   id                                         BigInt   @id @default(autoincrement())
-  uuid                                       String   @unique
+  uuid                                       String   @unique @default(uuid())
   surveyId                                   BigInt   @unique
   tangananUtamaSaatIni                       String
   tangananUtamaSaatIni_Lainnya               String?
@@ -147,7 +147,7 @@ model SurveyProspekPetani {
 
 model SurveyPelangganSti {
   id                                BigInt   @id @default(autoincrement())
-  uuid                              String   @unique
+  uuid                              String   @unique @default(uuid())
   surveyId                          BigInt   @unique   // One-to-one ke SurveyBagianUmum
   produkStiYangDigunakan_Nama       String
   produkStiYangDigunakan_Batch      String
@@ -188,7 +188,7 @@ model SurveyPelangganSti {
 
 model SurveyTokoPengecer {
   id                                 BigInt   @id @default(autoincrement())
-  uuid                               String   @unique
+  uuid                               String   @unique @default(uuid())
   surveyId                           BigInt   @unique
   profil_NamaToko                    String
   profil_Alamat                      String
@@ -216,7 +216,7 @@ model SurveyTokoPengecer {
 
 model SurveyMitraPengepul {
   id                                 BigInt   @id @default(autoincrement())
-  uuid                               String  @unique
+  uuid                               String  @unique @default(uuid())
   surveyId                           BigInt  @unique
   profil_NamaUsaha                   String
   profil_KomoditasUtama              String
@@ -241,7 +241,7 @@ model SurveyMitraPengepul {
 
 model SurveyKetuaPoktan {
   id                                 BigInt   @id @default(autoincrement())
-  uuid                               String  @unique
+  uuid                               String  @unique @default(uuid())
   surveyId                           BigInt  @unique
   profil_Nama                        String
   profil_JumlahAnggota               Int
@@ -268,7 +268,7 @@ model SurveyKetuaPoktan {
 
 model SurveyPenyelesaianMasalah {
   id                                     BigInt   @id @default(autoincrement())
-  uuid                                   String  @unique
+  uuid                                   String  @unique @default(uuid())
   surveyId                               BigInt @unique
   deskripsi_SejakKapan                   String
   deskripsi_TahapanTanaman               String
@@ -293,7 +293,7 @@ model SurveyPenyelesaianMasalah {
 
 model SurveyStatistikKonteksPertanian {
   id                                           BigInt   @id @default(autoincrement())
-  uuid                                         String @unique
+  uuid                                         String @unique @default(uuid())
   surveyId                                     BigInt @unique
   curahHujan                                   String
   kejadianEkstrem                              String
@@ -314,7 +314,7 @@ model SurveyStatistikKonteksPertanian {
 
 model SurveyPenutupRingkasan {
   id                                BigInt   @id @default(autoincrement())
-  uuid                              String  @unique
+  uuid                              String  @unique @default(uuid())
   surveyId                          BigInt  @unique
   ringkasanKebutuhanSolusi          String   @db.Text
   komitmenTindakLanjut_Apa          String   @db.Text

@@ -7,70 +7,59 @@ export class CreateContactDto {
     @IsString()
     jenisKontak: string; 
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    namaLengkap?: string;
+    namaLengkap: string;
 
     @ApiProperty({ required: false })
     @IsOptional()
     @IsString()
     jabatan?: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    noWa?: string;
+    noWa: string;
 
     @ApiProperty({ required: false })
     @IsOptional()
     @IsString()
     noAlternatif?: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    alamatLahanUsaha?: string;
+    alamatLahanUsaha: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    desa?: string;
+    desa: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    desaKode?: string;
+    desaKode: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    kecamatan?: string;
+    kecamatan: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    kecamatanKode?: string;
+    kecamatanKode: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    kabupaten?: string;
+    kabupaten: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    kabupatenKode?: string;
+    kabupatenKode: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    provinsi?: string;
+    provinsi: string;
 
-    @ApiProperty({ required: false })
-    @IsOptional()
+    @ApiProperty({ required: true })
     @IsString()
-    provinsiKode?: string;
+    provinsiKode: string;
 
     @ApiProperty({ required: false })
     @IsOptional()

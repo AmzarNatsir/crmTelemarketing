@@ -8,7 +8,11 @@ async function bootstrap() {
 
   // aktifkan validasi otomatis untuk DTO
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-
+  // ✅ Fix BigInt serialization issue (important for Prisma)
+  (BigInt.prototype as any).toJSON = function () {
+    return this.toString();
+  };
+  
   // swagger config
   const config = new DocumentBuilder()
     .setTitle('Auth API')

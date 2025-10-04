@@ -1,5 +1,4 @@
 import { Injectable } from "@nestjs/common";
-import { Prisma } from "generated/prisma/wasm";
 import { PrismaService } from "src/prisma/prisma.service";
 import { CreateContactDto, UpdateContactDto } from "./dto/contact.dto";
 
@@ -8,7 +7,13 @@ export class ContactService {
     constructor(private prisma: PrismaService) {}  
 
     async create(data: CreateContactDto) {
-        return this.prisma.contact.create({ data });
+        try {
+            return this.prisma.contact.create({ data });
+        } catch (error) {
+            console.error('Error create contact:', error);
+            throw error;
+        }
+        
     }
 
     // FIND ALL (include surveys)

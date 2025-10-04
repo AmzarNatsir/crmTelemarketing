@@ -1,12 +1,10 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { ContactService } from './contact.service';
-import { Prisma } from '@prisma/client';
 import { CreateContactDto, UpdateContactDto } from './dto/contact.dto';
 
 @Controller('contacts')
 export class ContactController {
   constructor(private readonly contactService: ContactService) {}
-
   // CREATE
   @Post()
   create(@Body() data: CreateContactDto) {
