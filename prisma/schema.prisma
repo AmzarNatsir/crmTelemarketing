@@ -33,3 +33,308 @@ model user_password_resets {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
+
+model Contact {
+  id            BigInt      @id @default(autoincrement())
+  uuid          String   @unique @default(uuid())
+  jenisKontak   String
+  namaLengkap   String?
+  jabatan      String?
+  noWa         String?
+  noAlternatif String?
+  alamatLahanUsaha String?
+  desa         String?
+  desaKode     String?
+  kecamatan    String?
+  kecamatanKode String?
+  kabupaten    String?
+  kabupatenKode String?
+  provinsi     String?
+  provinsiKode String?
+  titikKoordinat String?
+  photoProfile String?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+  // Relasi ke SurveyBagianUmum
+  surveys         SurveyBagianUmum[]
+}
+
+model SurveyBagianUmum {
+  id                          BigInt   @id @default(autoincrement())
+  uuid                        String   @unique
+  jenisKontak                 String
+  namaLengkap                 String
+  jabatan                     String
+  noWa                        String
+  noAlternatif                String?
+  alamatLahanUsaha            String
+  desa                        String
+  desaKode                    String
+  kecamatan                   String
+  kecamatanKode               String
+  kabupaten                   String
+  kabupatenKode               String
+  provinsi                    String
+  provinsiKode                String
+  titikKoordinat              String?
+  komoditasUtama              String
+  komoditasUtamaLainnya       String
+  luasLahan                   String
+  sistemIrigasi               String
+  sistemIrigasiLainnya        String?
+  musimTanamTanggal           DateTime
+  musimTanamPerkiraanPanen    DateTime
+  musimTanamTahapPertumbuhan  String
+  sumberMengenalSti           String
+  sumberMengenalStiLainnya    String?
+  persetujuanPerekamanPanggilan Boolean?
+  persetujuanPengolahanData   Boolean?
+  evidenceKunjungan           String
+  contactId                   BigInt
+  contact                     Contact  @relation(fields: [contactId], references: [id])
+  created_at                  DateTime @default(now())
+  updated_at                  DateTime @updatedAt
+
+  // Relasi One-to-One
+  prospekPetani SurveyProspekPetani?
+  pelangganSti  SurveyPelangganSti?
+  tokoPengecer  SurveyTokoPengecer?
+  mitraPengepul SurveyMitraPengepul?
+  ketuaPoktan   SurveyKetuaPoktan?
+  penyelesaianMasalah SurveyPenyelesaianMasalah?
+  statistikKonteksPertanian SurveyStatistikKonteksPertanian?
+  penutupRingkasan SurveyPenutupRingkasan?
+}
+
+model SurveyProspekPetani {
+  id                                         BigInt   @id @default(autoincrement())
+  uuid                                       String   @unique
+  surveyId                                   BigInt   @unique
+  tangananUtamaSaatIni                       String
+  tangananUtamaSaatIni_Lainnya               String?
+  dampakHasil_Penurunan                      Int
+  dampakHasil_Area                           Int
+  solusi_ProdukMerek                         String
+  solusi_Dosis                               String
+  solusi_CaraPakai                           String
+  solusi_Hasil                               Int
+  solusi_AlasanPuasTidak                     String
+  rencanaTanamAnggaran_Budget                Float     // Double di Prisma -> Float
+  rencanaTanamAnggaran_TargetHasil           Decimal
+  rencanaTanamAnggaran_BatasWaktuTanam       String
+  perilakuPembelian_TokoLangganan            String
+  perilakuPembelian_Pengepul                 String
+  perilakuPembelian_PengambilKeputusan       String
+  minatProgramPembayaranPerpanen             Boolean
+  minatProgramPembayaranPerpanen_KisaranHasil Decimal
+  minatProgramPembayaranPerpanen_FrequesiPanen Decimal
+  minatProgramPembayaranPerpanen_BuktiHasil  String
+  minatProgramPembayaranPerpanen_PreferensiTenor String
+  minatProgramPembayaranPerpanen_Kesediaan   Boolean
+  minatProgramRewardMemberGetMember          Boolean
+  minatProgramRewardMemberGetMember_TopikReward String
+  kebutuhanPendampinganAgronomis             Boolean
+  kebutuhanPendampinganAgronomis_Topik       String
+  kebutuhanPendampinganAgronomis_WaktuKunjungan DateTime
+  kesiapanUjiCobaProdukSti                   String
+  kesiapanUjiCobaProdukSti_AlasanTidakBerminat String
+  komitmenAwal                               String
+  dokumentasi_Photo                          String
+
+  // Relasi ke SurveyBagianUmum
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+}
+
+model SurveyPelangganSti {
+  id                                BigInt   @id @default(autoincrement())
+  uuid                              String   @unique
+  surveyId                          BigInt   @unique   // One-to-one ke SurveyBagianUmum
+  produkStiYangDigunakan_Nama       String
+  produkStiYangDigunakan_Batch      String
+  produkStiYangDigunakan_TanggalApplikasi DateTime
+  produkStiYangDigunakan_DosisCaraPakai   String
+  perkembanganTanaman_Pertumbuhan   Int
+  perkembanganTanaman_HijauDaun     Int
+  perkembanganTanaman_Akar          Int
+  perkembanganTanaman_BungaPolongBuah Int
+  kondisiCuaca                      String
+  kondisiCuaca_Catatan              String
+  masalahYangMuncul_Jenis           String
+  masalahYangMuncul_LuasTerdampak   Decimal
+  masalahYangMuncul_Keparahan       Int
+  masalahYangMuncul_Photo           String
+  tindakanKorektif_Apa              String
+  tindakanKorektif_Kapan            DateTime
+  tindakanKorektif_HasilAwal        Int
+  butuhPendampingan                 Boolean
+  butuhPendampingan_Jadwal          DateTime
+  butuhPendampingan_Lokasi          String
+  butuhPendampingan_Tujuan          String
+  perkiraanHasil                    Decimal
+  rencanaPanen                      DateTime
+  kepuasanTerhadapProdukLayanan_Nilai Int
+  kepuasanTerhadapProdukLayanan_Alasan String
+  minatIkutLanjutProgramReward      Boolean
+  memberGetMember                   Boolean
+  memberGetMember_Referal           String   // Text di DB → String di Prisma
+  nextStep_TindakLanjut             String
+  nextStep_WaktuFollowup            DateTime
+  // Relasi ke SurveyBagianUmum
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model SurveyTokoPengecer {
+  id                                 BigInt   @id @default(autoincrement())
+  uuid                               String   @unique
+  surveyId                           BigInt   @unique
+  profil_NamaToko                    String
+  profil_Alamat                      String
+  profil_KanalPenjualan              String
+  profil_VolumePenjualanBulanan      String
+  profil_MerekYangDijual             String
+  kebutuhanKetertarikan_ProdukSti    String
+  kebutuhanKetertarikan_Margin       String
+  kebutuhanKetertarikan_SyaratPembayaran String
+  kebutuhanKetertarikan_DukunganPromosi String
+  kesediaanProgram_DisplayMateri     String
+  kesediaanProgram_StokAwal          String
+  kesediaanProgram_DemoPlot          String
+  kesediaanProgram_ProgramPoin       String
+  rencanaKerjasama_POAwal            Boolean
+  rencanaKerjasama_POAwal_Estimasi   String
+  rencanaKerjasama_JadwalPelatihan   DateTime
+  rencanaKerjasama_TargetTigaBulan   String
+  memberGetMember_Nama               String
+  memberGetMember_Kontak             String
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model SurveyMitraPengepul {
+  id                                 BigInt   @id @default(autoincrement())
+  uuid                               String  @unique
+  surveyId                           BigInt  @unique
+  profil_NamaUsaha                   String
+  profil_KomoditasUtama              String
+  profil_WilayahJangkauan            String
+  profil_Musiman                     Boolean
+  kebutuhan_KonsistensiPasokan       String
+  kebutuhan_Kualitas                 String
+  kebutuhan_DukunganBudidaya         String
+  modelKerjasama_SkemaKemitraan      String
+  modelKerjasama_KeterlibatanProgram String
+  modelKerjasama_DukunganLogistikEdukasi String
+  potensiIntegrasiDataPanen          Boolean
+  komitmenAwal_PertemuanSelanjutnya DateTime
+  komitmenAwal_DataYangDibutuhkan String
+  komitmenAwal_PicTeknis           String
+
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+}
+
+model SurveyKetuaPoktan {
+  id                                 BigInt   @id @default(autoincrement())
+  uuid                               String  @unique
+  surveyId                           BigInt  @unique
+  profil_Nama                        String
+  profil_JumlahAnggota               Int
+  profil_TotalLuasTanam              String
+  profil_KomoditasMayor              String
+  agendaBudidaya_KalenderTanam       DateTime
+  agendaBudidaya_TantanganUmum       String
+  agendaBudidaya_KegiatanKelompok    String
+  ketertarikan_SosialisasiProduk     String
+  ketertarikan_DemoPlot              String
+  ketertarikan_ProgramPendampingan   String
+  ketertarikan_SkemaPembelianKolektif String
+  syaratEkspektasi_TransparansiHarga String
+  syaratEkspektasi_DukunganTeknis    String
+  syaratEkspektasi_RewardKelompok    String
+  aksiAwal_JadwalSosialisasi         DateTime
+  aksiAwal_LahanDemo                 String
+  aksiAwal_Anngota                   String   @db.Text
+
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model SurveyPenyelesaianMasalah {
+  id                                     BigInt   @id @default(autoincrement())
+  uuid                                   String  @unique
+  surveyId                               BigInt @unique
+  deskripsi_SejakKapan                   String
+  deskripsi_TahapanTanaman               String
+  dampak_LuasAreaTerdampak               Int
+  dampak_EstimasiPotensiPenurunanHasil   String
+  riwayatTindakan_ProdukSolusi           String
+  riwayatTindakan_Dosis                  String
+  riwayatTindakan_Tanggal                DateTime
+  akarDugaan                             String
+  akarDugaan_Lainnya                     String
+  kebutuhanDukungan                      String
+  rencanaAksiDisepakati_PaketRekomendasi String
+  rencanaAksiDisepakati_Siapa            String
+  slaPemantauan_Tanggal                  DateTime
+  slaPemantauan_Jam                      DateTime   @db.Time
+  statusTiket                            String
+
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model SurveyStatistikKonteksPertanian {
+  id                                           BigInt   @id @default(autoincrement())
+  uuid                                         String @unique
+  surveyId                                     BigInt @unique
+  curahHujan                                   String
+  kejadianEkstrem                              String
+  tanggal                                      DateTime
+  harga_TrenHargaPupukBenihPestisida           Float
+  harga_HargaJualHasilPanen                    Float
+  perubahanPraktikBudidaya_VarietasBaru        String
+  perubahanPraktikBudidaya_PerubahanTeknik     String
+  perubahanPraktikBudidaya_PenggunaanMesin     String
+  sumberInformasiPetani_Media                  String
+  sumberInformasiPetani_TokohLokal             String
+  sumberInformasiPetani_Penyuluh               String
+
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model SurveyPenutupRingkasan {
+  id                                BigInt   @id @default(autoincrement())
+  uuid                              String  @unique
+  surveyId                          BigInt  @unique
+  ringkasanKebutuhanSolusi          String   @db.Text
+  komitmenTindakLanjut_Apa          String   @db.Text
+  komitmenTindakLanjut_OlehSiapa    String   @db.Text
+  komitmenTindakLanjut_KapanTanggal DateTime
+  komitmenTindakLanjut_KapanJam     DateTime @db.Time
+  jadwalFollowup_Tanggal            DateTime
+  jadwalFollowup_Jam                DateTime @db.Time
+  jadwalFollowup_Kanal              String
+  dokumentasi                       String
+
+  survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+
+
+
+
+
+
+
