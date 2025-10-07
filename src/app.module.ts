@@ -6,10 +6,13 @@ import { PrismaModule } from './prisma/prisma.module';
 import { UserModule } from './users/user.module';
 import { ContactModule } from './contact/contact.module';
 import { SurveyModule } from './survey/survey.module';
+import { UploadService } from './upload/upload.service';
+import { UploadController } from './upload/upload.controller';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
-  imports: [PrismaModule, AuthModule, UserModule, ContactModule, SurveyModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [PrismaModule, AuthModule, UserModule, ContactModule, SurveyModule, UploadModule],
+  controllers: [AppController, UploadController],
+  providers: [AppService, UploadService],
 })
 export class AppModule {}
