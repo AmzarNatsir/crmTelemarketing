@@ -17,8 +17,8 @@ async function bootstrap() {
   
   // swagger config
   const config = new DocumentBuilder()
-    .setTitle('Auth API')
-    .setDescription('API dokumentasi untuk modul login')
+    .setTitle('Telemarketing API')
+    .setDescription('API dokumentasi Telemarketing System')
     .setVersion('1.0')
     .addBearerAuth() // supaya bisa input token di Swagger
     .build();
