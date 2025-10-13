@@ -14,6 +14,8 @@ async function bootstrap() {
   (BigInt.prototype as any).toJSON = function () {
     return this.toString();
   };
+
+  app.enableCors();
   
   // swagger config
   const config = new DocumentBuilder()
