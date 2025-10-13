@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "src/prisma/prisma.service";
 import { CreateSurveyUmumDto, UpdateSurveyUmumDto } from "./dto/umum.dto";
-import { Prisma } from "generated/prisma";
+// import { Prisma } from "generated/prisma";
 
 @Injectable()
 export class UmumService {
