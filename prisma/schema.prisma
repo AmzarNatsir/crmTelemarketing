@@ -205,9 +205,9 @@ model SurveyTokoPengecer {
   kesediaanProgram_DemoPlot          String
   kesediaanProgram_ProgramPoin       String
   rencanaKerjasama_POAwal            Boolean
-  rencanaKerjasama_POAwal_Estimasi   String
-  rencanaKerjasama_JadwalPelatihan   DateTime
-  rencanaKerjasama_TargetTigaBulan   String
+  rencanaKerjasama_POAwal_Estimasi   String?
+  rencanaKerjasama_JadwalPelatihan   DateTime?
+  rencanaKerjasama_TargetTigaBulan   String?
   memberGetMember_Nama               String
   memberGetMember_Kontak             String
   survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
