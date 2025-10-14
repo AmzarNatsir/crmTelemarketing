@@ -16,13 +16,27 @@ export class ContactService {
         
     }
 
-    // FIND ALL (include surveys)
-    findAll() {
-        return this.prisma.contact.findMany({
-        include: {
-            surveys: true,
-        },
-        });
+    // FIND ALL (include surveys) with pagination
+    async findAll(page: number = 1, limit: number = 10) {
+        const skip = (page - 1) * limit;
+        
+        const [contacts, total] = await Promise.all([
+            this.prisma.contact.findMany({
+                skip,
+                take: limit,
+                include: {
+                    surveys: true,
+                },
+            }),
+            this.prisma.contact.count()
+        ]);
+        
+        return {
+            contacts,
+            total,
+            page,
+            limit,
+        };
     }
 
     // FIND ONE
