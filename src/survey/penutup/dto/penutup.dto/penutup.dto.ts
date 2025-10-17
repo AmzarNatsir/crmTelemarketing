@@ -2,7 +2,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import { 
     IsDateString, 
     IsNumber, 
-    IsString 
+    IsOptional, 
+    IsString, 
+    Matches
 } from "class-validator";
 
 export class PenutupDto {
@@ -26,17 +28,24 @@ export class PenutupDto {
     @IsDateString()
     komitmenTindakLanjut_KapanTanggal: string;
 
-    @ApiProperty()
-    @IsDateString()
-    komitmenTindakLanjut_KapanJam: string;
+    @IsOptional()
+    @IsString()
+    @Matches(/^([01]\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/, {
+        message: 'komitmenTindakLanjut_KapanJam must be in HH:mm or HH:mm:ss format',
+    })
+    komitmenTindakLanjut_KapanJam?: string | null;
+
 
     @ApiProperty()
     @IsDateString()
     jadwalFollowup_Tanggal: string;
 
-    @ApiProperty()
-    @IsDateString()
-    jadwalFollowup_Jam: string;
+    @IsOptional()
+    @IsString()
+    @Matches(/^([01]\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/, {
+        message: 'jadwalFollowup_Jam must be in HH:mm or HH:mm:ss format',
+    })
+    jadwalFollowup_Jam?: string | null;
 
     @ApiProperty()
     @IsString()

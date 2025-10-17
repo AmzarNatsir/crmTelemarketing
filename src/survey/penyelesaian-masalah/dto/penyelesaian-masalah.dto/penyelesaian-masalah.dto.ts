@@ -3,7 +3,9 @@ import {
     IsDateString, 
     IsInt, 
     IsNumber, 
-    IsString 
+    IsOptional, 
+    IsString, 
+    Matches
 } from "class-validator";
 
 export class PenyelesaianMasalahDto {
@@ -63,11 +65,12 @@ export class PenyelesaianMasalahDto {
     @IsDateString()
     slaPemantauan_Tanggal: string;
 
-    @ApiProperty({
-        description: 'Format jam (HH:mm:ss) — Prisma menyimpannya sebagai @db.Time',
+    @IsOptional()
+    @IsString()
+    @Matches(/^([01]\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/, {
+        message: 'slaPemantauan_Jam must be in HH:mm or HH:mm:ss format',
     })
-    @IsDateString()
-    slaPemantauan_Jam: string;
+    slaPemantauan_Jam?: string | null;
 
     @ApiProperty()
     @IsString()

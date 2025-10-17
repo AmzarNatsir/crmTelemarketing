@@ -79,7 +79,7 @@ model SurveyBagianUmum {
   provinsiKode                String
   titikKoordinat              String?
   komoditasUtama              String
-  komoditasUtamaLainnya       String?
+  komoditasUtamaLainnya       String
   luasLahan                   String
   sistemIrigasi               String
   sistemIrigasiLainnya        String?
@@ -284,7 +284,7 @@ model SurveyPenyelesaianMasalah {
   rencanaAksiDisepakati_PaketRekomendasi String
   rencanaAksiDisepakati_Siapa            String
   slaPemantauan_Tanggal                  DateTime
-  slaPemantauan_Jam                      DateTime   @db.Time
+  slaPemantauan_Jam                      String?
   statusTiket                            String
 
   survey SurveyBagianUmum @relation(fields: [surveyId], references: [id])
@@ -321,9 +321,9 @@ model SurveyPenutupRingkasan {
   komitmenTindakLanjut_Apa          String   @db.Text
   komitmenTindakLanjut_OlehSiapa    String   @db.Text
   komitmenTindakLanjut_KapanTanggal DateTime
-  komitmenTindakLanjut_KapanJam     DateTime @db.Time
+  komitmenTindakLanjut_KapanJam     String?
   jadwalFollowup_Tanggal            DateTime
-  jadwalFollowup_Jam                DateTime @db.Time
+  jadwalFollowup_Jam                String?
   jadwalFollowup_Kanal              String
   dokumentasi                       String
 
