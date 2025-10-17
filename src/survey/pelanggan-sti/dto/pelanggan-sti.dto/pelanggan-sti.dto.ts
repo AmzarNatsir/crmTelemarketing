@@ -29,19 +29,19 @@ export class PelangganStiDto {
   produkStiYangDigunakan_DosisCaraPakai: string;
 
   @ApiProperty()
-  // @IsNumber()
+  @IsNumber()
   perkembanganTanaman_Pertumbuhan: number;
 
   @ApiProperty()
-  // @IsNumber()
+  @IsNumber()
   perkembanganTanaman_HijauDaun: number;
 
   @ApiProperty()
-  // @IsNumber()
+  @IsNumber()
   perkembanganTanaman_Akar: number;
 
   @ApiProperty()
-  // @IsNumber()
+  @IsNumber()
   perkembanganTanaman_BungaPolongBuah: number;
 
   @ApiProperty()
