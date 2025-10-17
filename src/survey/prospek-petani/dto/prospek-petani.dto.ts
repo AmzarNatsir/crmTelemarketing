@@ -78,23 +78,28 @@ export class CreateProspekPetaniDto {
   @IsBoolean()
   minatProgramPembayaranPerpanen: boolean;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDecimal()
   minatProgramPembayaranPerpanen_KisaranHasil: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDecimal()
   minatProgramPembayaranPerpanen_FrequesiPanen: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   minatProgramPembayaranPerpanen_BuktiHasil: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   minatProgramPembayaranPerpanen_PreferensiTenor: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsBoolean()
   minatProgramPembayaranPerpanen_Kesediaan: boolean;
 
@@ -102,7 +107,8 @@ export class CreateProspekPetaniDto {
   @IsBoolean()
   minatProgramRewardMemberGetMember: boolean;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   minatProgramRewardMemberGetMember_TopikReward: string;
 
@@ -110,11 +116,13 @@ export class CreateProspekPetaniDto {
   @IsBoolean()
   kebutuhanPendampinganAgronomis: boolean;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   kebutuhanPendampinganAgronomis_Topik: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
   kebutuhanPendampinganAgronomis_WaktuKunjungan: Date;
 

@@ -3,6 +3,7 @@ import {
     IsBoolean, 
     IsDateString, 
     IsNumber, 
+    IsOptional, 
     IsString 
 } from "class-validator";
 
@@ -67,15 +68,18 @@ export class TokoPengecerDto {
     @IsBoolean()
     rencanaKerjasama_POAwal: boolean;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     rencanaKerjasama_POAwal_Estimasi: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsDateString()
     rencanaKerjasama_JadwalPelatihan: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     rencanaKerjasama_TargetTigaBulan: string;
 

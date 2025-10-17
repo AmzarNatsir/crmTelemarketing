@@ -28,7 +28,7 @@ export class PenutupDto {
     @IsDateString()
     komitmenTindakLanjut_KapanTanggal: string;
 
-    @IsOptional()
+    @ApiProperty({ required: false })
     @IsString()
     @Matches(/^([01]\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/, {
         message: 'komitmenTindakLanjut_KapanJam must be in HH:mm or HH:mm:ss format',
@@ -40,6 +40,7 @@ export class PenutupDto {
     @IsDateString()
     jadwalFollowup_Tanggal: string;
 
+    @ApiProperty({ required: false })
     @IsOptional()
     @IsString()
     @Matches(/^([01]\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/, {
