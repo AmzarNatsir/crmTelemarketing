@@ -130,8 +130,9 @@ export class CreateProspekPetaniDto {
   @IsString()
   kesiapanUjiCobaProdukSti: string;
 
-  @ApiProperty()
-  @IsString()
+  @ApiProperty({ required: false })
+  @IsOptional()
+  // @IsString()
   kesiapanUjiCobaProdukSti_AlasanTidakBerminat: string;
 
   @ApiProperty()
