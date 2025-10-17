@@ -279,7 +279,7 @@ model SurveyPenyelesaianMasalah {
   riwayatTindakan_Dosis                  String
   riwayatTindakan_Tanggal                DateTime
   akarDugaan                             String
-  akarDugaan_Lainnya                     String
+  akarDugaan_Lainnya                     String?
   kebutuhanDukungan                      String
   rencanaAksiDisepakati_PaketRekomendasi String
   rencanaAksiDisepakati_Siapa            String
