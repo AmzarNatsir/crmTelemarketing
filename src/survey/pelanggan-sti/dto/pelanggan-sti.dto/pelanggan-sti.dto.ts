@@ -3,6 +3,7 @@ import {
     IsBoolean, 
     IsDateString,
     IsNumber, 
+    IsOptional, 
     IsString 
 } from "class-validator";
 
@@ -83,15 +84,18 @@ export class PelangganStiDto {
   @IsBoolean()
   butuhPendampingan: boolean;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
   butuhPendampingan_Jadwal: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   butuhPendampingan_Lokasi: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   butuhPendampingan_Tujuan: string;
 
@@ -119,7 +123,8 @@ export class PelangganStiDto {
   @IsBoolean()
   memberGetMember: boolean;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   memberGetMember_Referal: string;
 
