@@ -79,7 +79,7 @@ model SurveyBagianUmum {
   provinsiKode                String
   titikKoordinat              String?
   komoditasUtama              String
-  komoditasUtamaLainnya       String
+  komoditasUtamaLainnya       String?
   luasLahan                   String
   sistemIrigasi               String
   sistemIrigasiLainnya        String?
