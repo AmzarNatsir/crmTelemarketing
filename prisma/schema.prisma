@@ -127,16 +127,16 @@ model SurveyProspekPetani {
   perilakuPembelian_Pengepul                 String
   perilakuPembelian_PengambilKeputusan       String
   minatProgramPembayaranPerpanen             Boolean
-  minatProgramPembayaranPerpanen_KisaranHasil Decimal
-  minatProgramPembayaranPerpanen_FrequesiPanen Decimal
-  minatProgramPembayaranPerpanen_BuktiHasil  String
-  minatProgramPembayaranPerpanen_PreferensiTenor String
-  minatProgramPembayaranPerpanen_Kesediaan   Boolean
+  minatProgramPembayaranPerpanen_KisaranHasil Decimal?
+  minatProgramPembayaranPerpanen_FrequesiPanen Decimal?
+  minatProgramPembayaranPerpanen_BuktiHasil  String?
+  minatProgramPembayaranPerpanen_PreferensiTenor String?
+  minatProgramPembayaranPerpanen_Kesediaan   Boolean?
   minatProgramRewardMemberGetMember          Boolean
-  minatProgramRewardMemberGetMember_TopikReward String
+  minatProgramRewardMemberGetMember_TopikReward String?
   kebutuhanPendampinganAgronomis             Boolean
-  kebutuhanPendampinganAgronomis_Topik       String
-  kebutuhanPendampinganAgronomis_WaktuKunjungan DateTime
+  kebutuhanPendampinganAgronomis_Topik       String?
+  kebutuhanPendampinganAgronomis_WaktuKunjungan DateTime?
   kesiapanUjiCobaProdukSti                   String
   kesiapanUjiCobaProdukSti_AlasanTidakBerminat String
   komitmenAwal                               String
@@ -168,16 +168,16 @@ model SurveyPelangganSti {
   tindakanKorektif_Kapan            DateTime
   tindakanKorektif_HasilAwal        Int
   butuhPendampingan                 Boolean
-  butuhPendampingan_Jadwal          DateTime
-  butuhPendampingan_Lokasi          String
-  butuhPendampingan_Tujuan          String
+  butuhPendampingan_Jadwal          DateTime?
+  butuhPendampingan_Lokasi          String?
+  butuhPendampingan_Tujuan          String?
   perkiraanHasil                    Decimal
   rencanaPanen                      DateTime
   kepuasanTerhadapProdukLayanan_Nilai Int
   kepuasanTerhadapProdukLayanan_Alasan String
   minatIkutLanjutProgramReward      Boolean
   memberGetMember                   Boolean
-  memberGetMember_Referal           String   // Text di DB → String di Prisma
+  memberGetMember_Referal           String?   // Text di DB → String di Prisma
   nextStep_TindakLanjut             String
   nextStep_WaktuFollowup            DateTime
   // Relasi ke SurveyBagianUmum
