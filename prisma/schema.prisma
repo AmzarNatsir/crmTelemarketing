@@ -138,7 +138,7 @@ model SurveyProspekPetani {
   kebutuhanPendampinganAgronomis_Topik       String?
   kebutuhanPendampinganAgronomis_WaktuKunjungan DateTime?
   kesiapanUjiCobaProdukSti                   String
-  kesiapanUjiCobaProdukSti_AlasanTidakBerminat String
+  kesiapanUjiCobaProdukSti_AlasanTidakBerminat String?
   komitmenAwal                               String
   dokumentasi_Photo                          String
 
