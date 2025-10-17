@@ -45,8 +45,9 @@ export class PenyelesaianMasalahDto {
     @IsString()
     akarDugaan: string;
 
-    @ApiProperty()
-    @IsString()
+    @ApiProperty({ required: false })
+    @IsOptional()
+    // @IsString()
     akarDugaan_Lainnya: string;
 
     @ApiProperty()
