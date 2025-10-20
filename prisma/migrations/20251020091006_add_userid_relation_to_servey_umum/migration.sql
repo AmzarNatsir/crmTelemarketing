@@ -13,58 +13,58 @@
 
 */
 -- DropForeignKey
-ALTER TABLE `surveybagianumum` DROP FOREIGN KEY `SurveyBagianUmum_contactId_fkey`;
+-- ALTER TABLE `surveybagianumum` DROP FOREIGN KEY `SurveyBagianUmum_contactId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveyketuapoktan` DROP FOREIGN KEY `SurveyKetuaPoktan_surveyId_fkey`;
+-- ALTER TABLE `surveyketuapoktan` DROP FOREIGN KEY `SurveyKetuaPoktan_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveymitrapengepul` DROP FOREIGN KEY `SurveyMitraPengepul_surveyId_fkey`;
+-- ALTER TABLE `surveymitrapengepul` DROP FOREIGN KEY `SurveyMitraPengepul_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveypelanggansti` DROP FOREIGN KEY `SurveyPelangganSti_surveyId_fkey`;
+-- ALTER TABLE `surveypelanggansti` DROP FOREIGN KEY `SurveyPelangganSti_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveypenutupringkasan` DROP FOREIGN KEY `SurveyPenutupRingkasan_surveyId_fkey`;
+-- ALTER TABLE `surveypenutupringkasan` DROP FOREIGN KEY `SurveyPenutupRingkasan_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveypenyelesaianmasalah` DROP FOREIGN KEY `SurveyPenyelesaianMasalah_surveyId_fkey`;
+-- ALTER TABLE `surveypenyelesaianmasalah` DROP FOREIGN KEY `SurveyPenyelesaianMasalah_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveyprospekpetani` DROP FOREIGN KEY `SurveyProspekPetani_surveyId_fkey`;
+-- ALTER TABLE `surveyprospekpetani` DROP FOREIGN KEY `SurveyProspekPetani_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveystatistikkontekspertanian` DROP FOREIGN KEY `SurveyStatistikKonteksPertanian_surveyId_fkey`;
+-- ALTER TABLE `surveystatistikkontekspertanian` DROP FOREIGN KEY `SurveyStatistikKonteksPertanian_surveyId_fkey`;
 
 -- DropForeignKey
-ALTER TABLE `surveytokopengecer` DROP FOREIGN KEY `SurveyTokoPengecer_surveyId_fkey`;
+-- ALTER TABLE `surveytokopengecer` DROP FOREIGN KEY `SurveyTokoPengecer_surveyId_fkey`;
 
 -- DropTable
-DROP TABLE `surveybagianumum`;
+-- DROP TABLE `surveybagianumum`;
 
 -- DropTable
-DROP TABLE `surveyketuapoktan`;
+-- DROP TABLE `surveyketuapoktan`;
 
 -- DropTable
-DROP TABLE `surveymitrapengepul`;
+-- DROP TABLE `surveymitrapengepul`;
 
 -- DropTable
-DROP TABLE `surveypelanggansti`;
+-- DROP TABLE `surveypelanggansti`;
 
 -- DropTable
-DROP TABLE `surveypenutupringkasan`;
+-- DROP TABLE `surveypenutupringkasan`;
 
 -- DropTable
-DROP TABLE `surveypenyelesaianmasalah`;
+-- DROP TABLE `surveypenyelesaianmasalah`;
 
 -- DropTable
-DROP TABLE `surveyprospekpetani`;
+-- DROP TABLE `surveyprospekpetani`;
 
 -- DropTable
-DROP TABLE `surveystatistikkontekspertanian`;
+-- DROP TABLE `surveystatistikkontekspertanian`;
 
 -- DropTable
-DROP TABLE `surveytokopengecer`;
+-- DROP TABLE `surveytokopengecer`;
 
 -- CreateTable
 CREATE TABLE `survey_bagian_umum` (
