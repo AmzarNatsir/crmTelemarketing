@@ -16,18 +16,20 @@ export class CreateContactDto {
     @IsString()
     jabatan?: string;
 
-    @ApiProperty({ required: true })
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
-    noWa: string;
+    noWa?: string;
 
     @ApiProperty({ required: false })
     @IsOptional()
     @IsString()
     noAlternatif?: string;
 
-    @ApiProperty({ required: true })
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
-    alamatLahanUsaha: string;
+    alamatLahanUsaha?: string;
 
     @ApiProperty({ required: true })
     @IsString()

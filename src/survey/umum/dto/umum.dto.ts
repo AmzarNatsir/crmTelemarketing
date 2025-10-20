@@ -17,22 +17,25 @@ export class CreateSurveyUmumDto {
   @IsString()
   namaLengkap: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
-  jabatan: string;
+  jabatan?: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
-  noWa: string;
+  noWa?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
   noAlternatif?: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
-  alamatLahanUsaha: string;
+  alamatLahanUsaha?: string;
 
   @ApiProperty()
   @IsString()
@@ -71,43 +74,50 @@ export class CreateSurveyUmumDto {
   @IsString()
   titikKoordinat?: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
-  komoditasUtama: string;
+  komoditasUtama?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
   komoditasUtamaLainnya?: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
-  luasLahan: string;
+  luasLahan?: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
-  sistemIrigasi: string;
+  sistemIrigasi?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
   sistemIrigasiLainnya?: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
-  musimTanamTanggal: string;
+  musimTanamTanggal?: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
-  musimTanamPerkiraanPanen: string;
+  musimTanamPerkiraanPanen?: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false })
+  @IsOptional()
   @IsString()
-  musimTanamTahapPertumbuhan: string;
+  musimTanamTahapPertumbuhan?: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
-  sumberMengenalSti: string;
+  sumberMengenalSti?: string;
 
   @ApiProperty({ required: false })
   @IsOptional()
@@ -124,13 +134,18 @@ export class CreateSurveyUmumDto {
   @IsBoolean()
   persetujuanPengolahanData?: boolean;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
-  evidenceKunjungan: string;
+  evidenceKunjungan?: string;
 
   @ApiProperty()
   @IsNumber()
   contactId: number;
+
+  @ApiProperty()
+  @IsNumber()
+  userId: number;
 }
 
 export class UpdateSurveyUmumDto extends CreateSurveyUmumDto {}
