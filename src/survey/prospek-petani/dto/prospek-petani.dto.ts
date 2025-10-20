@@ -13,7 +13,8 @@ export class CreateProspekPetaniDto {
   @IsNumber()
   surveyId: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   tangananUtamaSaatIni: string;
 
@@ -22,59 +23,73 @@ export class CreateProspekPetaniDto {
   @IsString()
   tangananUtamaSaatIni_Lainnya?: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsNumber()
   dampakHasil_Penurunan: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsNumber()
   dampakHasil_Area: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   solusi_ProdukMerek: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   solusi_Dosis: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   solusi_CaraPakai: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsNumber()
   solusi_Hasil: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   solusi_AlasanPuasTidak: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsNumber()
   rencanaTanamAnggaran_Budget: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsDecimal()
   rencanaTanamAnggaran_TargetHasil: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   rencanaTanamAnggaran_BatasWaktuTanam: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   perilakuPembelian_TokoLangganan: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   perilakuPembelian_Pengepul: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   perilakuPembelian_PengambilKeputusan: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsBoolean()
   minatProgramPembayaranPerpanen: boolean;
 
@@ -103,7 +118,8 @@ export class CreateProspekPetaniDto {
   @IsBoolean()
   minatProgramPembayaranPerpanen_Kesediaan: boolean;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsBoolean()
   minatProgramRewardMemberGetMember: boolean;
 
@@ -112,7 +128,8 @@ export class CreateProspekPetaniDto {
   @IsString()
   minatProgramRewardMemberGetMember_TopikReward: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsBoolean()
   kebutuhanPendampinganAgronomis: boolean;
 
@@ -126,7 +143,8 @@ export class CreateProspekPetaniDto {
   @IsDateString()
   kebutuhanPendampinganAgronomis_WaktuKunjungan: Date;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   kesiapanUjiCobaProdukSti: string;
 
@@ -135,11 +153,13 @@ export class CreateProspekPetaniDto {
   // @IsString()
   kesiapanUjiCobaProdukSti_AlasanTidakBerminat: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   komitmenAwal: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false } )
+  @IsOptional()
   @IsString()
   dokumentasi_Photo: string;
 }
