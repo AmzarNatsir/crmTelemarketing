@@ -67,7 +67,7 @@
 -- DROP TABLE `surveytokopengecer`;
 
 -- CreateTable
-CREATE TABLE `survey_bagian_umum` (
+CREATE TABLE IF NOT EXISTS `survey_bagian_umum` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `jenisKontak` VARCHAR(191) NULL,
@@ -108,7 +108,7 @@ CREATE TABLE `survey_bagian_umum` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_prospek_petani` (
+CREATE TABLE IF NOT EXISTS `survey_prospek_petani` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -149,7 +149,7 @@ CREATE TABLE `survey_prospek_petani` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_pelanggan_sti` (
+CREATE TABLE IF NOT EXISTS `survey_pelanggan_sti` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -192,7 +192,7 @@ CREATE TABLE `survey_pelanggan_sti` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_toko_pengecer` (
+CREATE TABLE IF NOT EXISTS `survey_toko_pengecer` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -224,7 +224,7 @@ CREATE TABLE `survey_toko_pengecer` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_mitra_pengepul` (
+CREATE TABLE IF NOT EXISTS `survey_mitra_pengepul` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -251,7 +251,7 @@ CREATE TABLE `survey_mitra_pengepul` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_ketua_poktan` (
+CREATE TABLE IF NOT EXISTS `survey_ketua_poktan` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -281,7 +281,7 @@ CREATE TABLE `survey_ketua_poktan` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_penyelesaian_masalah` (
+CREATE TABLE IF NOT EXISTS `survey_penyelesaian_masalah` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -309,7 +309,7 @@ CREATE TABLE `survey_penyelesaian_masalah` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_statistik_konteks_pertanian` (
+CREATE TABLE IF NOT EXISTS `survey_statistik_konteks_pertanian` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
@@ -333,7 +333,7 @@ CREATE TABLE `survey_statistik_konteks_pertanian` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `survey_penutup_ringkasan` (
+CREATE TABLE IF NOT EXISTS `survey_penutup_ringkasan` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `uuid` VARCHAR(191) NOT NULL,
     `surveyId` BIGINT NOT NULL,
