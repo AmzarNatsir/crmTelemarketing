@@ -26,7 +26,8 @@ model User {
   created_at            DateTime  @default(now())
   updated_at            DateTime  @updatedAt
 
-  // @@map("user")
+  surveyBagianUmum SurveyBagianUmum[]
+  @@map("user")
 }
 
 model user_password_resets {
@@ -61,7 +62,7 @@ model Contact {
   // Relasi ke SurveyBagianUmum
   surveys         SurveyBagianUmum[]
 
-  @@map("contacts")
+  @@map("contact")
 
 }
 
@@ -98,6 +99,11 @@ model SurveyBagianUmum {
   evidenceKunjungan           String?
   contactId                   BigInt
   contact                     Contact  @relation(fields: [contactId], references: [id])
+
+  /// ✅ Tambahan relasi ke User
+  userId                      Int
+  user                        User     @relation(fields: [userId], references: [id])
+
   created_at                  DateTime @default(now())
   updated_at                  DateTime @updatedAt
 
