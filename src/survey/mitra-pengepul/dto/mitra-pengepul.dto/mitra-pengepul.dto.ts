@@ -3,6 +3,7 @@ import {
     IsBoolean, 
     IsDateString, 
     IsNumber, 
+    IsOptional, 
     IsString 
 } from "class-validator";
 
@@ -11,59 +12,73 @@ export class MitraPengepulDto {
     @IsNumber()
     surveyId: number;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     profil_NamaUsaha: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     profil_KomoditasUtama: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     profil_WilayahJangkauan: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsBoolean()
     profil_Musiman: boolean;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     kebutuhan_KonsistensiPasokan: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     kebutuhan_Kualitas: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     kebutuhan_DukunganBudidaya: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     modelKerjasama_SkemaKemitraan: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     modelKerjasama_KeterlibatanProgram: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     modelKerjasama_DukunganLogistikEdukasi: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsBoolean()
     potensiIntegrasiDataPanen: boolean;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsDateString()
     komitmenAwal_PertemuanSelanjutnya: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     komitmenAwal_DataYangDibutuhkan: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     komitmenAwal_PicTeknis: string;
 }

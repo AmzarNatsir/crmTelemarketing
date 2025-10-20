@@ -12,59 +12,73 @@ export class TokoPengecerDto {
     @IsNumber()
     surveyId: number;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_NamaToko: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_Alamat: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_KanalPenjualan: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_VolumePenjualanBulanan: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_MerekYangDijual: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kebutuhanKetertarikan_ProdukSti: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kebutuhanKetertarikan_Margin: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kebutuhanKetertarikan_SyaratPembayaran: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kebutuhanKetertarikan_DukunganPromosi: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kesediaanProgram_DisplayMateri: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kesediaanProgram_StokAwal: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kesediaanProgram_DemoPlot: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     kesediaanProgram_ProgramPoin: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsBoolean()
     rencanaKerjasama_POAwal: boolean;
 
@@ -83,11 +97,13 @@ export class TokoPengecerDto {
     @IsString()
     rencanaKerjasama_TargetTigaBulan: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     memberGetMember_Nama: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     memberGetMember_Kontak: string;
 }

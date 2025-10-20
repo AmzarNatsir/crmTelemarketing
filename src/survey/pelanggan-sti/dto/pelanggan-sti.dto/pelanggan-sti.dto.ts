@@ -8,81 +8,94 @@ import {
 } from "class-validator";
 
 export class PelangganStiDto {
-    @ApiProperty()
+  @ApiProperty()
   @IsNumber()
   surveyId: number; // relasi ke SurveyBagianUmum
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   produkStiYangDigunakan_Nama: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   produkStiYangDigunakan_Batch: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
   produkStiYangDigunakan_TanggalApplikasi: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   produkStiYangDigunakan_DosisCaraPakai: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   perkembanganTanaman_Pertumbuhan: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   perkembanganTanaman_HijauDaun: number;
 
-  @ApiProperty()
+  @ApiProperty( { required: false })
+  @IsOptional()
   @IsNumber()
   perkembanganTanaman_Akar: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   perkembanganTanaman_BungaPolongBuah: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   kondisiCuaca: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   kondisiCuaca_Catatan: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   masalahYangMuncul_Jenis: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   masalahYangMuncul_LuasTerdampak: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   masalahYangMuncul_Keparahan: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   masalahYangMuncul_Photo: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   tindakanKorektif_Apa: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
   tindakanKorektif_Kapan: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   tindakanKorektif_HasilAwal: number;
-
-  @ApiProperty()
-  @IsBoolean()
-  butuhPendampingan: boolean;
 
   @ApiProperty({ required: false })
   @IsOptional()
@@ -99,40 +112,43 @@ export class PelangganStiDto {
   @IsString()
   butuhPendampingan_Tujuan: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false })
+  @IsOptional()
   @IsNumber()
   perkiraanHasil: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
   rencanaPanen: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsNumber()
   kepuasanTerhadapProdukLayanan_Nilai: number;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsString()
   kepuasanTerhadapProdukLayanan_Alasan: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsBoolean()
   minatIkutLanjutProgramReward: boolean;
-
-  @ApiProperty()
-  @IsBoolean()
-  memberGetMember: boolean;
 
   @ApiProperty({ required: false })
   @IsOptional()
   @IsString()
   memberGetMember_Referal: string;
 
-  @ApiProperty()
+  @ApiProperty( { required: false })
+  @IsOptional()
   @IsString()
   nextStep_TindakLanjut: string;
 
-  @ApiProperty()
+  @ApiProperty({ required: false })
+  @IsOptional()
   @IsDateString()
   nextStep_WaktuFollowup: string;
 }

@@ -12,23 +12,28 @@ export class PenutupDto {
     @IsNumber()
     surveyId: number;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     ringkasanKebutuhanSolusi: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     komitmenTindakLanjut_Apa: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     komitmenTindakLanjut_OlehSiapa: string;
 
-    @ApiProperty()
+    @ApiProperty({ required: false })
+    @IsOptional()
     @IsDateString()
     komitmenTindakLanjut_KapanTanggal: string;
 
     @ApiProperty({ required: false })
+    @IsOptional()
     @IsString()
     @Matches(/^([01]\d|2[0-3]):([0-5]\d)(:[0-5]\d)?$/, {
         message: 'komitmenTindakLanjut_KapanJam must be in HH:mm or HH:mm:ss format',
@@ -36,7 +41,8 @@ export class PenutupDto {
     komitmenTindakLanjut_KapanJam?: string | null;
 
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsDateString()
     jadwalFollowup_Tanggal: string;
 
@@ -48,11 +54,13 @@ export class PenutupDto {
     })
     jadwalFollowup_Jam?: string | null;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     jadwalFollowup_Kanal: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     dokumentasi: string;
 

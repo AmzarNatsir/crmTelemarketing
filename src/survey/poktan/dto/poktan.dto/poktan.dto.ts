@@ -3,6 +3,7 @@ import {
     IsDateString, 
     IsInt, 
     IsNumber, 
+    IsOptional, 
     IsString 
 } from "class-validator";
 
@@ -11,71 +12,88 @@ export class PoktanDto {
     @IsNumber()
     surveyId: number;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_Nama: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsInt()
     profil_JumlahAnggota: number;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_TotalLuasTanam: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     profil_KomoditasMayor: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsDateString()
     agendaBudidaya_KalenderTanam: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     agendaBudidaya_TantanganUmum: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     agendaBudidaya_KegiatanKelompok: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     ketertarikan_SosialisasiProduk: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     ketertarikan_DemoPlot: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     ketertarikan_ProgramPendampingan: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     ketertarikan_SkemaPembelianKolektif: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     syaratEkspektasi_TransparansiHarga: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     syaratEkspektasi_DukunganTeknis: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     syaratEkspektasi_RewardKelompok: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsDateString()
     aksiAwal_JadwalSosialisasi: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     aksiAwal_LahanDemo: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     aksiAwal_Anngota: string;
 }

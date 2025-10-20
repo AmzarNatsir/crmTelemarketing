@@ -13,35 +13,43 @@ export class PenyelesaianMasalahDto {
     @IsNumber()
     surveyId: number;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     deskripsi_SejakKapan: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     deskripsi_TahapanTanaman: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsInt()
     dampak_LuasAreaTerdampak: number;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     dampak_EstimasiPotensiPenurunanHasil: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     riwayatTindakan_ProdukSolusi: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     riwayatTindakan_Dosis: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsDateString()
     riwayatTindakan_Tanggal: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     akarDugaan: string;
 
@@ -50,19 +58,23 @@ export class PenyelesaianMasalahDto {
     // @IsString()
     akarDugaan_Lainnya: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     kebutuhanDukungan: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     rencanaAksiDisepakati_PaketRekomendasi: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsString()
     rencanaAksiDisepakati_Siapa: string;
 
-    @ApiProperty()
+    @ApiProperty( { required: false })
+    @IsOptional()
     @IsDateString()
     slaPemantauan_Tanggal: string;
 
@@ -74,7 +86,8 @@ export class PenyelesaianMasalahDto {
     })
     slaPemantauan_Jam?: string | null;
 
-    @ApiProperty()
+    @ApiProperty( { required: false } )
+    @IsOptional()
     @IsString()
     statusTiket: string;
 }
