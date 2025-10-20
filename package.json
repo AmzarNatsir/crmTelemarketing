@@ -19,7 +19,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate:dev": "npx prisma migrate dev",
-    "migrate:deploy": "npx prisma migrate deploy"
+    "migrate:deploy": "npx prisma migrate deploy",
+
+    "start:docker": "npx prisma migrate resolve --rolled-back 20251020091006_add_userid_relation_to_servey_umum || true && npx prisma migrate deploy && node dist/main.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
