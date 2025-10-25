@@ -58,6 +58,24 @@ export class UmumService {
         });
     }
 
+    // FIND BY CONTACT ID
+    findByContactId(contactId: bigint) {
+        return this.prisma.surveyBagianUmum.findMany({
+            where: { contactId },
+            include: {
+                contact: true,
+                prospekPetani: true,
+                pelangganSti: true,
+                tokoPengecer: true,
+                mitraPengepul: true,
+                ketuaPoktan: true,
+                penyelesaianMasalah: true,
+                statistikKonteksPertanian: true,
+                penutupRingkasan: true,
+            },
+        });
+    }
+
     update(id: bigint, data: UpdateSurveyUmumDto) {
         return this.prisma.surveyBagianUmum.update({
         where: { id },

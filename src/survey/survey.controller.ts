@@ -62,6 +62,12 @@ export class SurveyController {
     return this.umumService.findOne(BigInt(id));
   }
 
+  // FIND BY CONTACT ID
+  @Get('umum/:contactId/contact')
+  findByContactId(@Param('contactId') contactId: string) {
+    return this.umumService.findByContactId(BigInt(contactId));
+  }
+
   // UPDATE
   @Put('umum/:id')
   updateUmum(@Param('id') id: string, @Body() data: UpdateSurveyUmumDto) {
